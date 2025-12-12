@@ -9,9 +9,9 @@ export const Services = () => {
     return <section id="services">
         <Container className="space-y-10 md:space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-4">
-                <Title> Our AI Services </Title>
+                <Title> Operational Divisions </Title>
                 <Paragraph>
-                    At EdgeAI, we offer a comprehensive suite of AI services designed to meet the diverse needs of modern businesses. Our offerings include:
+                    At Ghostline, we provide a specialized network of synthetic operatives and cognitive systems built for precision, adaptability, and zero-trace outcomes. Each asset is engineered to serve distinct operational demands across urban, digital, and off-world environments.                
                 </Paragraph>
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">

@@ -6,11 +6,11 @@ import { Button } from "../shared/Button";
 
 export const Pricing = () => {
   return (
-    <section id="pricing" className="py-5">
+    <section id="pricing" className="py-5 mt-16">
         <Container className="text-center mb-5">
-            <Title>Pricing</Title>
+            <Title>Contracts</Title>
             <Paragraph className="mt-2">
-            Choose the plan that’s right for your business
+            Choose the tier that fits your level of discretion
             </Paragraph>
         </Container>
 
@@ -40,7 +40,7 @@ export const Pricing = () => {
                             ))}
                         </ul>
                         <div className="mt-8">
-                            <Button className=" w-full transform transistion-transform duration-300 hover:scale-105 text-white">Choose Plan</Button>
+                            <Button className=" w-full transform transistion-transform duration-300 hover:scale-105 text-white">Choose Contract</Button>
                         </div>
                     </div>
                     </div>

@@ -1,32 +1,33 @@
 export const PricingPlans = [
     {
-        title: "Pro Basic",
-        price: "$49/mo",
+        title: "Recon Basic",
+        price: "$49/cycle",
         features: [
-            "Access to basic AI tools",
-            "Limited data analytics",
-            "Priority email support",   
+            "Access to entry-level synthetic operatives",
+            "Limited target acquisition radius",
+            "Standard data-wipe protocol", 
+            "Support via encrypted message only"  
         ],
     },
     {
-        title: "Pro",
-        price: "$49/mo",
+        title: "Silent Pro (Most Requested)",
+        price: "$49/cycle",
         features: [
-            "Everything in basic",
-            "Advanced AI features",
-            "Realtime data analytics",
-            "Priority email support",   
+            "Includes all Recon privileges",
+            "Enhanced infiltration algorithms",
+            "Real-time mission telemetry feed",
+            "Priority neural-link support",   
         ],
         bestValue: true,
     },
     {
-        title: "Enterprise",
-        price: "$99/mo",
+        title: "Obsidian Executive",
+        price: "$99/cycle",
         features: [
-            "Everything in Pro",
-            "Dedicated account manager",
-            "Customs integrations",
-            "24/7 phone support",
+            "Includes all Silent features",
+            "Dedicated handler & tactical AI oversight",
+            "Custom weapon integration and disguise modules",
+            "24/7 dark-net support line",
         ],
     },
 ];

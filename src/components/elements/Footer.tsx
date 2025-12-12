@@ -9,7 +9,7 @@ export const Footer = () => {
             <div className="flex flex-col md:flex-row justify-between items-center">
                 <div className="flex items-center gap-3 mb-4 md:mb-0">
                     <img src={logo} className="w-7 h-7" alt="EdgeAI logo"/>
-                    <span className="text-lg font-semibold text-heading-1">Edge AI</span>
+                    <span className="text-lg font-semibold text-heading-1">Ghostline Operatives</span>
                 </div>
                 <ul className="flex gap-6 text-heading-1">
                 {navItems.map((item, key) => (

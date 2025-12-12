@@ -1,7 +1,7 @@
 export const Service = [
     {
-    title: "Intelligent Automation",
-    description: "Streamline processes and reduce manual tasks.",
+    title: "Infiltration Protocols",
+    description: "Execute silent entries, information extractions, and neutralizations with machine-level precision.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -20,8 +20,8 @@ export const Service = [
     ),
   },
   {
-    title: "Real‑Time Analytics",
-    description: "Gain actionable insights as events unfold.",
+    title: "Predictive Targeting",
+    description: "Leverage adaptive foresight to anticipate movements, outcomes, and resistance patterns before engagement.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -40,8 +40,8 @@ export const Service = [
     ),
   },
   {
-    title: "Predictive Insights",
-    description: " Anticipate trends and mitigate risks before they occur.",
+    title: "Cognitive Autonomy",
+    description: "Deploy droids capable of self-learning, emotional mimicry, and mission evolution without human oversight.",
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"

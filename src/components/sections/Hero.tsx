@@ -8,21 +8,16 @@ export const Hero = () => {
         {""}
         <Container className="flex flex-col lg:flex-row gap-10 lg:gap-12">
             <div className="absolute w-full lg:w-1/2 inset-y-0 lg:right-0">
-                <span className="absolute -left-6 md:left-4 top-24 lg:top-28 w-24 h-24 rotate-90 
-                                skew-x-12 rounded-3xl bg-gradient-to-r from-blue-600 to-violet-600 opacity-10 z-0
-                                blur-xl opacity-60 lg:opacity-95 lg:block hidden"
-                                >
-
-                </span>
+                
                 <span className="absolute right-4 bottom-12 w-24 h-24 rounded-3xl bg-primary blur-xl opacity-80">
                 </span>
             </div>
             <div className="relative flex flex-col items-center text-center 
                             lg:text-left lg:py-8 lg:items-start lg:max-w-none 
                             max-w-3xl mx-auto lg:mx-0 lg:flex-1 lg:w-1/2">
-                <h1 className="text-heading-1 text-3xl sm:text-4xl md:text-5-xl xl:text-6xl font-bold" >Empower Your Bussiness <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 ml-2">with AI</span></h1>
+                <h1 className="text-heading-1 text-3xl sm:text-4xl md:text-5-xl xl:text-6xl font-bold">Ghostline<span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-violet-600 ml-2">Synthetic Assets</span></h1>
             <Paragraph className="mt-8">
-                EdgeAI is a cutting-edge AI SaaS platform designed to help businesses automate workflows, uncover insights, and scale smarter. With powerful machine learning models accessible through an intuitive dashboard, EdgeAI empowers teams to build, deploy, and monitor AI solutions—no coding required. From predictive analytics to real-time decision-making, EdgeAI brings enterprise-grade intelligence to your fingertips.
+                Ghostline is a covert intelligence platform built to classify, track, and evaluate next-generation synthetic operatives across the urban grid. Through a secure neural-scan interface, users can access detailed behaviour models, operational histories, and threat diagnostics on any registered unit. Ghostline enables enforcement teams and corporate networks to analyse, predict, and respond to machine-driven events with precision—bringing deep-system clarity to a world where artificial assets evolve faster than the laws built to contain them.            
             </Paragraph>
                 <div className="mt-10 w-full flex max-w-md mx-auto lg:mx-0">
                     <div className="flex sm:flex-row flex-col gap-5 w-full">
@@ -53,16 +48,28 @@ export const Hero = () => {
                     </div>
                 </div>
             </div>
+                <Container className="flex flex-col items-center justify-center gap-6">
+                    {/* Hero Image */}
+                    <div className="w-full relative">
+                        <img
+                        src="/media/Hero.jpg"
+                        alt="Hero image"
+                        className="w-full h-auto rounded-3xl object-cover"
+                        loading="lazy"
+                        />
+                    </div>
 
-            <div className="flex flex-1 lg:w-1/2 lg:-auto relative lg:max-w-none lg:mx-0 max-w-3xl mx-auto">
-                <img src="https://images.pexels.com/photos/7773731/pexels-photo-7773731.jpeg?aut0=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="Hero image"
-                width={2350}
-                height={2359}
-                className="lg:absolute lg:w-full lg:height-full rounded-3xl object-cover lg:max-h-none max-h-96"
-                />
+                    {/* Secondary asset stacked below */}
+                    <div className="w-full flex justify-center pt-22">
+                        <img
+                        src="/media/DN-asset.png"
+                        alt="Decorative network asset"
+                        className="w-auto h-16 md:h-20 lg:h-24 object-contain"
+                        loading="lazy"
+                        />
+                    </div>
+                </Container>
 
-            </div>
         </Container>
         <Numbers/>
     </section>;

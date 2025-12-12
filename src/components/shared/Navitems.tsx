@@ -1,15 +1,19 @@
-
 interface NavItemProps {
-    href: string;
-    text: string;
-}   
+  href: string;
+  text: string;
+  onClick?: () => void; // optional for closing the mobile menu
+}
 
-export const NavItem = ({href, text}: NavItemProps) => {
-    return (
-        <li>
-            <a href={href} className="duration-300 font-medium ease-linear hover:text-primary py-3">
-            {text}
-            </a>
-        </li>
-    )
+export const NavItem = ({ href, text, onClick }: NavItemProps) => {
+  return (
+    <li>
+      <a
+        href={href}
+        onClick={onClick}
+        className="duration-300 font-medium ease-linear hover:text-primary py-3"
+      >
+        {text}
+      </a>
+    </li>
+  );
 };

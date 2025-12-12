@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from "react";
 import { Container } from "../shared/container";
 import logo from "../../assets/logo.svg";
 import Theme from "../../assets/theme.svg";
@@ -6,57 +7,118 @@ import { BtnLink } from "../shared/BtnLink";
 import { useThemeStore } from "../../store/ThemeStore";
 
 export const navItems = [
-    {href: "#", text: "Home"},
-    {href: "#services", text: "Services"},
-    {href: "#about-us", text: "About Us"},
-    {href: "#pricing", text: "Pricing"},
+  { href: "#", text: "Home" },
+  { href: "#services", text: "Services" },
+  { href: "#about-us", text: "About Us" },
+  { href: "#pricing", text: "Pricing" },
 ];
 
 export const Navbar = () => {
-    const { toggleTheme, theme } = useThemeStore();
+  const { toggleTheme, theme } = useThemeStore();
+  const [open, setOpen] = useState(false);
 
-    return <header className="absolute inset-x-0 z-50 py-6">
-        <Container>
-            <nav className="w-full flex justify-between gap-6 relative">   
-                {/* Logo */}
-                <div className="min-width-max inline-flex relative">
-                    <a href="/" className="relative flex items-center gap-3">
-                        <img src={logo} alt="Edge Ai logo" className="w-10 h-10"/>
-                        <div className="inline-flex text-lg font-semibold text-heading-1">
-                            EdgeAI
-                        </div>
-                    </a> 
-                </div>
+  const close = useCallback(() => setOpen(false), []);
 
-                <div className="flex flex-col lg:flex-row w-full lg:justify-between lg:items-center 
-                                absolute top-full left-0 lg:static lg:top-0 bg-body lg:bg-transparent border-x 
-                                border-x-box-border lg:border-x-0 lg:height-auto">
+  // ESC key close + body scroll lock
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => e.key === "Escape" && close();
+    document.addEventListener("keydown", onKey);
+    document.body.classList.toggle("overflow-hidden", open);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.classList.remove("overflow-hidden");
+    };
+  }, [open, close]);
 
-                </div>
-                <ul className="border-t border-box-border lg:border-t-0 px-6 lg:px-0 pt-6 lg:pt-0 
-                    flex flex-col lg:flex-row gap-y-4 gap-x-3 text-lg text-heading-2 w-full 
-                    lg:justify-center lg:items-center overflow-hidden">
-                    {navItems.map((item, key) => (
-                    <NavItem href={item.href} text={item.text} key={key} />
-                    ))}
-                </ul>
-                <div className="lg:min-w-max flex items-center  sm:w-max w-full pb-6 lg:pb-0 
-                border-b border-box-border lg:border-0 px-6 lg:px-0">
-                    <BtnLink text="Get started" href="#cta" className=""/>
-                </div>
-                <div className="min-w-max flex item-center gap-x-3">
-                    <button onClick={toggleTheme} className="outline-hidden flex relative text-heading-2 rounded-full p-1 border border-box-border cursor-pointer">
-                        {
-                            theme === 'dark' ? (
-                               <img src={Theme} className="w-10 h-10 invert"/> 
-                            ) : (
-                                <img src={Theme} className="w-10 h-10"/>
-                            )
-                        }
+  return (
+    <header className="absolute inset-x-0 top-0 z-50 py-6">
+      <Container>
+        <nav className="relative flex items-center justify-between w-full gap-6">
+          {/* --- Logo --- */}
+          <a href="/" className="inline-flex items-center gap-3 min-w-max">
+            <img src={logo} alt="EdgeAI logo" className="w-16 h-16 " />
+            <span className="text-lg font-semibold text-heading-1">Ghostline Operatives</span>
+          </a>
 
-                    </button>
-                </div>
-            </nav>
-        </Container>
-    </header>;
-}
+          {/* --- Right Section (Nav, CTA, Theme, Hamburger) --- */}
+          <div className="flex items-center gap-2 lg:gap-3">
+            {/* Hamburger (mobile only) */}
+            <button
+              className="lg:hidden inline-flex items-center justify-center p-2 rounded-md border border-box-border text-heading-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+              onClick={() => setOpen((v) => !v)}
+              aria-controls="primary-nav"
+              aria-expanded={open}
+              aria-label="Toggle navigation"
+            >
+              {/* Hamburger / X icons */}
+              <svg
+                className={`h-6 w-6 ${open ? "hidden" : "block"}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path strokeWidth="2" strokeLinecap="round" d="M4 7h16M4 12h16M4 17h16" />
+              </svg>
+              <svg
+                className={`h-6 w-6 ${open ? "block" : "hidden"}`}
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+              >
+                <path strokeWidth="2" strokeLinecap="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+
+          {/* --- Backdrop (mobile overlay) --- */}
+          <button
+            onClick={close}
+            className={`lg:hidden fixed inset-0 bg-black/40 transition-opacity duration-200
+              ${open ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}
+            aria-hidden="true"
+            tabIndex={-1}
+          />
+
+          {/* --- Collapsible Nav --- */}
+          <div
+            id="primary-nav"
+            className={`
+              absolute left-0 top-full w-full bg-body border-x border-b border-box-border
+              lg:static lg:w-auto lg:bg-transparent lg:border-0
+              transition-[max-height,opacity] duration-300 ease-in-out overflow-hidden lg:overflow-visible
+              ${open ? "max-h-[80vh] opacity-100" : "max-h-0 opacity-0"} lg:max-h-none lg:opacity-100
+            `}
+          >
+            <div className="px-6 py-4 lg:p-0 lg:flex lg:items-center lg:gap-6">
+              {/* --- Nav Links --- */}
+              <ul className="flex flex-col gap-y-4 lg:flex-row lg:gap-x-4 text-lg text-heading-2">
+                {navItems.map((item, key) => (
+                  <NavItem href={item.href} text={item.text} key={key} onClick={close} />
+                ))}
+              </ul>
+
+              {/* --- CTA Button --- */}
+              <div className="mt-4 lg:mt-0 lg:ml-4 flex items-center gap-3">
+                <BtnLink text="Get started" href="#cta" className="" />
+
+                {/* --- Theme Toggle (moved here) --- */}
+                <button
+                  onClick={toggleTheme}
+                  className="flex items-center rounded-full p-2 lg:p-3 border border-box-border text-heading-2 outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
+                  aria-label="Toggle theme"
+                >
+                  <img
+                    src={Theme}
+                    className={`w-8 h-8 lg:w-10 lg:h-10 ${theme === "dark" ? "invert" : ""}`}
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </Container>
+    </header>
+  );
+};

@@ -5,8 +5,18 @@ interface ButtonProps {
     onClick?: () => void;
 }   
 
-export const Button = ({children, onClick, className=""}: ButtonProps) => {
-    return (
-        <button onClick={onClick} className={`px-6 py-3 rounded-full outline-none cursor-pointer relative overflow-hidden border border-transparent bg-violet-600 ${className}`}>{children}</button>
-    )
+export const Button = ({ children, onClick, className = "" }: ButtonProps) => {
+  return (
+    <button
+      onClick={onClick}
+      className={`
+        px-6 py-3 rounded-full outline-none cursor-pointer relative overflow-hidden 
+        border border-transparent bg-violet-600 
+        text-white dark:text-black 
+        ${className}
+      `}
+    >
+      {children}
+    </button>
+  );
 };

@@ -18,7 +18,7 @@ import { useEffect } from "react";
     
         <Navbar />
 
-        <main className="flex flex-col gap-y-20 md:gap-y-32 overflow-hidden">
+        <main className="flex flex-col gap-y-20 md:gap-y-16 overflow-hidden">
         {children}
         </main>
         

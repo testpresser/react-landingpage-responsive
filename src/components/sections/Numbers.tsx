@@ -6,12 +6,12 @@ export const Numbers = () => {
             <div className="mx-auto lg:max0 p-5 sm:p-6 sm:py-8 max-w-5xl rounded-3xl bg-box-bg border norder-box-border shadow-lg shadow-box-shadow md:divide-x divide-box-border grid grid-cols-2 md:grid-cols-4">
                 <div className="text-center px-5">
                     <h2 className="font-semibold text-xl sm:text-2xl md-text-4xl text-heading-1">100+</h2>
-                    <p className="mt-2 text-heading-3">AI models implemted</p>
+                    <p className="mt-2 text-heading-3">Silent assinations</p>
                 </div>
 
                 <div className="text-center px-5">
                     <h2 className="font-semibold text-xl sm:text-2xl md-text-4xl text-heading-1">250+</h2>
-                    <p className="mt-2 text-heading-3">Enterprise Clients</p>
+                    <p className="mt-2 text-heading-3">contract deployments</p>
                 </div>
 
                 <div className="text-center px-5">
